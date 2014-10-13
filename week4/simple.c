@@ -1,36 +1,55 @@
 #include <stdio.h>
 void test(int value);
-void myfunction (int value);
+
+float calcAvg (int data[]);
 
 int main (int argc, char** argv){
-int data[1000]; // create array
-test(5);
-printf("The end of the main\n");
-myfunction(10);
+	int data[1000000]; // create array
+
+	for (int i = 0; i< 100000; i++){
+		data[i] = i;
+
+	}
+
+	float avg = calcAvg(data);
 
 
 }
 
+float calcAvg (int data[]){
+	float avg = 0.0;
+int sum;
+	/*
+	* what is the algorithm for
+	* calculating average?
+	*/
+for (int i = 0; i < 100000; i++){
+sum +=data[i];
+} 
 
-//this function returns niothing and takes no parameters
-//and takes one parameter and integer
-void test(int value){
-	if(value > 10){
-	//	printf("That's a big number\n");
-}
- 
-
-	for(int i = 0; i < 10; i++){
-		printf("Hello from the loop\n");
-}
- printf("The end of the main\n");
-       
+avg = sum / 100000;
+	
+	return avg;
 }
 
-void myfunction(int value){
-   if(value < 10) {
-    value = 100;}
-   else {
-   value = 200;
+
+/**
+
+void ca (int value)
+
+{
+ int i, j;
+int n = 10000;
+int a[n];
+for (i=1; i < n; i++)
+{
+	for (j = n -1; j >= i; --j)
+	{
+		if (a[j] < a[j-1])
+			{
+			swap(a[j], a[j-1]);
+			}
+	}
 }
 }
+**/
