@@ -2,55 +2,46 @@
 void test(int value);
 
 float calcAvg (int data[]);
+const int size = 1000000;
 
 int main (int argc, char** argv){
-	int data[1000000]; // create array
+	int data[size]; // create array
 
-	for (int i = 0; i< 100000; i++){
+	/*
+
+	* can this step be parallelized?
+I think it can be parallelized here as we can divide the array into even parts and then each part would be filled in 
+by a separate thread.
+	*/
+	for (int i = 0; i < size; i++){
 		data[i] = i;
 
 	}
 
 	float avg = calcAvg(data);
 
+	printf("Average is %f\n", avg);
+
 
 }
 
+
+
 float calcAvg (int data[]){
 	float avg = 0.0;
-int sum;
-int size = 1000000;
-	/*
-	* what is the algorithm for
-	* calculating average?
-	*/
-for (int i = 0; i < size; i++){
-sum +=data[i];
-} 
+	int sum = 0;
 
-avg = sum / size;
+	/*
+	* can this step be parallelized?
+This bit of code can also be parallelized, the same as the code above we can split ti in a smaller parts and 
+than add the results dividing by the number of the smaller parts.
+	*/
+	for (int i = 0; i < size; i++){
+		sum +=data[i];
+	} 
+
+	avg = sum / size;
 	
 	return avg;
 }
 
-
-/**
-
-void ca (int value)
-
-{
- int i, j;
-int n = 10000;
-int a[n];
-for (i=1; i < n; i++)
-{
-	for (j = n -1; j >= i; --j)
-	{
-		if (a[j] < a[j-1])
-			{
-			swap(a[j], a[j-1]);
-			}
-	}
-}
-}
-**/
