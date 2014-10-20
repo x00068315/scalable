@@ -10,9 +10,7 @@ for (int i = 0; i < n; i++){
 
 	}
 
-printf("forward\n");
-  for (i = 0; i < n; ++i) 
-    printf("A[%d] = %d\n",i,array[i]);
+
 
 for (i=1; i < n; i++)
 {
