@@ -26,13 +26,13 @@ for (i=1; i < n; i++)
 			}
 	}
 }
-printf("forward\n");
+printf("sorted\n");
   for (i = 0; i < n; ++i) 
     printf("A[%d] = %d\n",i,array[i]);
 
-  printf("\nbackward\n");
-  for (i = n; i >= 0; --i) 
-    printf("A[%d] = %d\n",i,array[i]);
+ // printf("\nbackward\n");
+ // for (i = n; i >= 0; --i) 
+ //   printf("A[%d] = %d\n",i,array[i]);
 }
 
 
