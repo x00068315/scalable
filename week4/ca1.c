@@ -1,30 +1,38 @@
-int main()
+#include <stdio.h>
+int main (int argc, char** argv)
 
 {
 int i, j, swap;
 int n = 10000;
-int a[n];
+int array[n];
 for (int i = 0; i < n; i++){
-		a[i] = i;
+		array[i] = i;
 
 	}
 
-
+printf("forward\n");
+  for (i = 0; i < n; ++i) 
+    printf("A[%d] = %d\n",i,array[i]);
 
 for (i=1; i < n; i++)
 {
 	for (j = n -1; j >= i; --j)
 	{
-		if (a[j] < a[j-1])
+		if (array[j] < array[j-1])
 			{
-			swap = a[j]; 
-                        a[j] = a[j-1];
-                        a[j-1] = swap;
+			swap = array[j]; 
+                        array[j] = array[j-1];
+                        array[j-1] = swap;
 			}
 	}
 }
+printf("forward\n");
+  for (i = 0; i < n; ++i) 
+    printf("A[%d] = %d\n",i,array[i]);
 
-printf("Average is %f\n", swap);
+  printf("\nbackward\n");
+  for (i = n; i >= 0; --i) 
+    printf("A[%d] = %d\n",i,array[i]);
 }
 
 
