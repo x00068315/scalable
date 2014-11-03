@@ -24,6 +24,17 @@ void* linearSearch(void *threadid)
    * compute the thread workload size
    */
 
+   /* this is n / p
+    */
+   int thread_work = search_size / num_threads;
+
+   /*
+    * not every thread can start at position  0
+    */
+   for(int i = 0; i < thread_work; i++){
+   }
+
+
    /*
     * iterate over the thread workload looking for the 
     * key
